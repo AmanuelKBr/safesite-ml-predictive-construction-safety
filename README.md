@@ -10,11 +10,9 @@ This is the primary demonstration interface for the project. The app allows user
 
 - predicted probability of next-year high-risk outcome
 - binary classification
-- risk band:
-  - Low
-  - Medium
-  - High
-  - Critical
+- risk band: Low, Medium, High, Critical
+
+![Streamlit Demo](assets/streamlit_demo.png)
 
 ## Project Summary
 
