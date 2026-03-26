@@ -334,6 +334,95 @@ This project demonstrates:
 - automated endpoint and app health validation
 - optional Power BI reporting layer for risk trend consumption
 
+
+
+## Diagrams
+
+**End‑to‑End Architecture (Visual Sketch)**
+
+                           ┌──────────────────────────────┐
+                           │        End Users              │
+                           │  (Safety Managers, Analysts)  │
+                           └───────────────┬──────────────┘
+                                           │
+                                           │ 1. User interacts with UI
+                                           ▼
+                     ┌──────────────────────────────────────────┐
+                     │        Streamlit Application (UI)        │
+                     │  - Runs in Azure Container Apps          │
+                     │  - Collects input data                   │
+                     │  - Displays predictions + visuals        │
+                     └───────────────┬──────────────────────────┘
+                                     │
+                                     │ 2. Streamlit sends JSON payload
+                                     │    to model API
+                                     ▼
+                     ┌──────────────────────────────────────────┐
+                     │   Azure ML Managed Online Endpoint       │
+                     │   (Model Inference API)                  │
+                     │                                          │
+                     │  - Receives request                      │
+                     │  - Loads registered model                │
+                     │  - Runs score.py                         │
+                     │  - Computes probability + risk band      │
+                     │  - Returns JSON response                 │
+                     └───────────────┬──────────────────────────┘
+                                     │
+                                     │ 3. Endpoint returns prediction
+                                     ▼
+                     ┌──────────────────────────────────────────┐
+                     │        Streamlit Application (UI)        │
+                     │  - Displays results to user              │
+                     │  - Logs or stores results if needed      │
+                     └───────────────┬──────────────────────────┘
+                                     │
+                                     │ 4. (Optional) Save results
+                                     ▼
+                     ┌──────────────────────────────────────────┐
+                     │     Database / Storage (Optional)        │
+                     │  - Azure SQL / CosmosDB / Blob Storage   │
+                     │  - Stores prediction history             │
+                     └──────────────────────────────────────────┘
+
+
+
+**Model Lifecycle Architecture (Visual Sketch)**
+
+                   ┌────────────────────────────────────┐
+                   │      Training Pipeline (Local       │
+                   │      or Azure ML Pipeline)          │
+                   │  - Preprocessing                    │
+                   │  - Feature engineering              │
+                   │  - Model training                   │
+                   │  - Evaluation                       │
+                   └───────────────┬────────────────────┘
+                                   │
+                                   │ 1. Register trained model
+                                   ▼
+                   ┌────────────────────────────────────┐
+                   │      Azure ML Model Registry        │
+                   │  - safesite-risk-model:1           │
+                   │  - safesite-risk-model:2           │
+                   │  - Versioned, tracked, stored       │
+                   └───────────────┬────────────────────┘
+                                   │
+                                   │ 2. Deploy model version
+                                   ▼
+                   ┌────────────────────────────────────┐
+                   │ Azure ML Managed Online Endpoint    │
+                   │  - blue deployment                  │
+                   │  - green deployment                 │
+                   │  - traffic routing                  │
+                   └───────────────┬────────────────────┘
+                                   │
+                                   │ 3. Streamlit calls endpoint
+                                   ▼
+                   ┌────────────────────────────────────┐
+                   │ Streamlit App (UI Layer)           │
+                   └────────────────────────────────────┘
+
+
+
 ## Author
 
 **Amanuel Birri**
