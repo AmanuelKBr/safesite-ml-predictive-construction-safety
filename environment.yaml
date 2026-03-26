@@ -1,0 +1,5 @@
+$schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
+name: safesite-risk-env
+version: 1
+image: mcr.microsoft.com/azureml/minimal-ubuntu20.04-py39-cpu-inference:latest
+conda_file: conda.yaml

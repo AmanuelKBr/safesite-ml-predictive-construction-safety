@@ -1,0 +1,15 @@
+feature,importance
+tcr_rate_log,0.4345217
+dart_rate_log,0.11518994
+dafw_rate_log,0.07288981
+death_severity,0.07007379
+total_dafw_cases,0.055930045
+death_flag,0.04072803
+death_rate_proxy_log,0.036211014
+total_hours_worked,0.034370013
+total_deaths_log,0.033651263
+total_other_cases,0.02760537
+annual_average_employees,0.02509711
+total_djtr_days,0.018470872
+total_dafw_days,0.017648375
+total_djtr_cases,0.017612718

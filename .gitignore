@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.python-version
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+mlruns/
+
+# Local env / secrets
+.env
+.env.*
+!.env.example
+
+# Build / cache
+build/
+dist/
+.eggs/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.cache/
+
+# Streamlit local secrets
+.streamlit/secrets.toml
+
+# Local installers / binaries
+*.msi
+
+# Large / sensitive artifacts
+artifacts/*.joblib
+artifacts/*.pkl
+artifacts/*.bin
+artifacts/*.onnx
+
+# Keep safe documentation-style artifacts
+!artifacts/model_metadata.json
+!artifacts/feature_importance.csv
+
+# Data files
+data/*.csv
+data/*.xlsx
+data/*.parquet
+data/*.json
+raw-data/*.csv
+
+# AutoML exports
+automl/*.csv
+
+# Azure local clutter
+.azure/

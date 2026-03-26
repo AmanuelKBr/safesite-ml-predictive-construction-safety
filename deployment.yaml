@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: green
+endpoint_name: safesite-risk-endpoint-dev-01
+model: azureml:safesite-risk-model:1
+code_configuration:
+  code: .
+  scoring_script: score.py
+environment: azureml:safesite-risk-env:1
+instance_type: Standard_D2as_v4
+instance_count: 1

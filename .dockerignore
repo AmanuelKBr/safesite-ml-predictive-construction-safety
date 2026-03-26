@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+artifacts/__pycache__/
+.git/
+.gitignore
+.streamlit/
+.ipynb_checkpoints/
+*.log

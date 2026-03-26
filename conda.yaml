@@ -1,0 +1,15 @@
+name: safesite-risk-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip=23.3
+  - setuptools
+  - wheel
+  - pip:
+      - azureml-inference-server-http
+      - joblib
+      - pandas
+      - numpy
+      - scikit-learn
+      - xgboost

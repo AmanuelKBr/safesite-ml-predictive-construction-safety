@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "annual_average_employees": 180,
+      "total_hours_worked": 360000,
+      "death_flag": 1,
+      "total_deaths_log": 1.0986123,
+      "death_severity": 2.0,
+      "death_rate_proxy_log": 0.6931472,
+      "total_dafw_cases": 6,
+      "total_djtr_cases": 4,
+      "total_other_cases": 8,
+      "total_dafw_days": 120,
+      "total_djtr_days": 95,
+      "tcr_rate_log": 2.6026897,
+      "dart_rate_log": 2.0918641,
+      "dafw_rate_log": 1.4350845
+    }
+  ]
+}

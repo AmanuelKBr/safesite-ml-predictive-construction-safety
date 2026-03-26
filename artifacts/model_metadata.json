@@ -1,0 +1,37 @@
+{
+    "feature_cols": [
+        "annual_average_employees",
+        "total_hours_worked",
+        "death_flag",
+        "total_deaths_log",
+        "death_severity",
+        "death_rate_proxy_log",
+        "total_dafw_cases",
+        "total_djtr_cases",
+        "total_other_cases",
+        "total_dafw_days",
+        "total_djtr_days",
+        "tcr_rate_log",
+        "dart_rate_log",
+        "dafw_rate_log"
+    ],
+    "threshold": 0.3,
+    "risk_band_thresholds": {
+        "low": [
+            0.0,
+            0.3
+        ],
+        "medium": [
+            0.3,
+            0.3987569158804706
+        ],
+        "high": [
+            0.3987569158804706,
+            0.46016156365370603
+        ],
+        "critical": [
+            0.46016156365370603,
+            1.0
+        ]
+    }
+}
