@@ -173,6 +173,8 @@ Risk bands are derived from probability thresholds, with the final thresholding 
 
 This project showcases one validated production baseline model delivered through multiple consumption paths.
 
+![SafeSite ML Architecture](assets/SafeSite_ML_Architecture_Diagram.png)
+
 ### 1) Local development path
 
 - Python training scripts
